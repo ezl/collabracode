@@ -1,12 +1,32 @@
 function itersort_bubblesort(arr, iteration) {
-  // TODO fill in body
   arr = duplicateArray(arr);
+  for(var i=1, len=arr.length-1; i <= len; i++) {
+    if(arr[i-1] > arr[i]){
+      var poop = arr[i-1]
+      arr[i-1] = arr[i]
+      arr[i] = poop
+    }
+  }
   return arr;
 }
 
 function itersort_insertionsort(arr, iteration) {
-  // TODO fill in body
   arr = duplicateArray(arr);
+  for(var i=1, len=arr.length-1; i <= len; i++) {
+    var value = arr[i];
+    var j = i - 1;
+    done = false;
+      if(arr[j] > value) {
+        arr[j+1] = arr[j];
+        j--;
+        if(j < 0) {
+          done = true;
+        }
+      } else {
+        done = true;
+      }
+    arr[j+1] = value;
+  }
   return arr;
 }
 
